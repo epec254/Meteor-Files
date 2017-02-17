@@ -655,7 +655,7 @@ class FilesCollection
 
         unless doc.isFinished
           console.info "[FilesCollection] [_preCollectionCursor.observe] [removeUnfinishedUpload]: #{doc.file.path}" if self.debug
-          self._currentUploads[doc._id].abort()
+          #self._currentUploads[doc._id].abort() ## bug fix for file upload with Google Cloud Storage not working
 
         delete self._currentUploads[doc._id]
         return
